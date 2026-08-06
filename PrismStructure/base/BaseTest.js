@@ -1,6 +1,7 @@
 const { test: base, expect } = require('@playwright/test');
 const { HomePage } = require('../pageObjects/HomePage');
-const { AuthPage } = require('../pageObjects/AuthPage');
+const { LoginPage } = require('../pageObjects/LoginPage');
+const { RegisterPage } = require('../pageObjects/RegisterPage');
 const { ProductPage } = require('../pageObjects/ProductPage');
 const { CartPage } = require('../pageObjects/CartPage');
 const { CheckoutPage } = require('../pageObjects/CheckoutPage');
@@ -17,8 +18,11 @@ const test = base.extend({
   homePage: async ({ page }, use) => {
     await use(new HomePage(page));
   },
-  authPage: async ({ page }, use) => {
-    await use(new AuthPage(page));
+  loginPage: async ({ page }, use) => {
+    await use(new LoginPage(page));
+  },
+  registerPage: async ({ page }, use) => {
+    await use(new RegisterPage(page));
   },
   productPage: async ({ page }, use) => {
     await use(new ProductPage(page));

@@ -34,6 +34,9 @@
   "negative": {
     "invalidPassword": "WrongPass99!"
   },
+  "messages": {
+    "invalidLoginCredentials": "Invalid email or password"
+  },
   "cart": {
     "defaultQuantity": 1,
     "updatedQuantity": 2

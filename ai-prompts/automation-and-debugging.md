@@ -59,3 +59,16 @@ Created full PrismStructure MVP: 6 page objects, 4 API clients + ApiHelper, Data
 
 **Validation Notes:**
 API endpoint paths and UI locators are best-effort; must be verified against live app and Swagger docs before execution.
+
+---
+
+## Entry 3: UI Auth Specs — register/login smoke + invalid login regression
+
+**Prompt:**
+> Write two Playwright UI spec files for Toolshop auth flow using LoginPage and RegisterPage.
+
+**AI Response Summary:**
+Split AuthPage into LoginPage/RegisterPage; added auth-register.spec.js (@smoke) and auth-login-invalid.spec.js (@regression) with dynamic email via registrationFactory and exact error message from test-data/messages.
+
+**Validation Notes:**
+Error message `Invalid email or password` stored in toolshop.json — run `npm run test:regression` once to confirm exact string against live app; update test-data if UI copy differs.

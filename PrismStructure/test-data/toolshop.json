@@ -1,0 +1,41 @@
+{
+  "registration": {
+    "firstName": "Morgan",
+    "lastName": "Reed",
+    "dob": "1990-06-15",
+    "country": "United States of America (the)",
+    "postalCode": "33101",
+    "houseNumber": "42",
+    "phone": "5550102001",
+    "emailPrefix": "morgan.reed.qa",
+    "emailDomain": "toolshop-test.example",
+    "password": "ShopTest1!"
+  },
+  "search": {
+    "validKeyword": "pliers",
+    "invalidKeyword": "zzxnonexistent999"
+  },
+  "checkout": {
+    "paymentMethod": "cash-on-delivery",
+    "paymentMethodLabel": "Cash on Delivery"
+  },
+  "invoice": {
+    "billingStreet": "Zoey Shore",
+    "billingCity": "Hesselbury",
+    "billingState": "Florida",
+    "billingCountry": "TG",
+    "billingPostalCode": "1234AA"
+  },
+  "profile": {
+    "expectedFirstName": "Jane",
+    "expectedLastName": "Doe",
+    "expectedEmail": "customer@practicesoftwaretesting.com"
+  },
+  "negative": {
+    "invalidPassword": "WrongPass99!"
+  },
+  "cart": {
+    "defaultQuantity": 1,
+    "updatedQuantity": 2
+  }
+}

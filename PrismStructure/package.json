@@ -4,6 +4,7 @@
   "description": "Prism-pattern Playwright automation for Practice Software Testing Toolshop",
   "scripts": {
     "test": "playwright test",
+    "test:all": "playwright test",
     "test:ui": "playwright test --project=ui-chromium",
     "test:api": "playwright test --project=api-tests",
     "test:smoke": "playwright test --grep @smoke",
@@ -11,6 +12,7 @@
     "report": "playwright show-report reports/html"
   },
   "devDependencies": {
-    "@playwright/test": "^1.50.0"
+    "@playwright/test": "^1.50.0",
+    "dotenv": "^16.4.7"
   }
 }

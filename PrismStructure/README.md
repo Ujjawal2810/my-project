@@ -89,4 +89,4 @@ Tags use Playwright **`tag` annotation** in spec files (e.g. `tag: ['@smoke']`),
 
 ## Status
 
-**Scaffold only** — folder structure and conventions documented. Test specs, page objects, and configs to be implemented in subsequent prompts.
+**MVP scaffold complete** — page objects, API clients, test-data, env, sample UI/API specs. Locators and API paths may need tuning against live SUT before all tests pass.

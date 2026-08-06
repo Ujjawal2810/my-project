@@ -1,14 +1,11 @@
 // @ts-check
-const { defineConfig, devices } = require('@playwright/test');
 const path = require('path');
+require('dotenv').config({ path: path.join(__dirname, '.env') });
+const { defineConfig, devices } = require('@playwright/test');
 
-/**
- * PrismStructure — Playwright config with UI and API separated via projects.
- * UI: tests/ui/  |  API: tests/api/
- * Reports: reports/html/
- */
 module.exports = defineConfig({
   testDir: './tests',
+  timeout: 30000,
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 1 : 0,
@@ -21,11 +18,14 @@ module.exports = defineConfig({
   use: {
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
+    actionTimeout: 30000,
+    navigationTimeout: 30000,
   },
   projects: [
     {
       name: 'ui-chromium',
       testDir: './tests/ui',
+      grep: /@smoke|@regression/,
       use: {
         ...devices['Desktop Chrome'],
         baseURL: process.env.BASE_URL || 'https://practicesoftwaretesting.com',
@@ -34,11 +34,10 @@ module.exports = defineConfig({
     {
       name: 'api-tests',
       testDir: './tests/api',
+      grep: /@smoke|@regression/,
       use: {
         baseURL: process.env.API_BASE_URL || 'https://api.practicesoftwaretesting.com',
-        extraHTTPHeaders: {
-          Accept: 'application/json',
-        },
+        extraHTTPHeaders: { Accept: 'application/json' },
       },
     },
   ],

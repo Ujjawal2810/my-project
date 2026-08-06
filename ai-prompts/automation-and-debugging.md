@@ -46,3 +46,16 @@ Prism Java blog uses ExtentReports + TestNG XML; Playwright equivalent uses HTML
 **Config file:** Single `playwright.config.js` with two `projects` entries (not TestNG XML). Optional split configs noted in README for future use.
 
 **Debugging Outcome:** Blog is Java/Selenium-specific; assessment requires Playwright JS — structural principles (page objects, base lib, utils, separated test packages) mapped, not copied verbatim.
+
+---
+
+## Entry 2: MVP Playwright Scaffold — Toolshop
+
+**Prompt:**
+> Scaffold minimum viable Playwright JS structure mirroring Prism conventions: page objects, API clients, test-data, .env, config with HTML reporter, tags, 30s timeout, npm scripts.
+
+**AI Response Summary:**
+Created full PrismStructure MVP: 6 page objects, 4 API clients + ApiHelper, DataProvider, env utils, sample specs, playwright.config.js, package.json.
+
+**Validation Notes:**
+API endpoint paths and UI locators are best-effort; must be verified against live app and Swagger docs before execution.

@@ -166,3 +166,58 @@ Deeper validation of edge cases, negative paths, and secondary features.
 |---------------|---------------------|
 | **AC1:** Registration & Login & Profile | TC-UI-S01, TC-UI-R02, TC-UI-R03 |
 | **AC2:** E2E Purchase Flow (browse → cart → qty → COD → invoice) | TC-UI-S02, TC-UI-S03, TC-UI-S04, TC-UI-R01 |
+
+---
+
+## Entry 2: QA Risk Register — Practice Software Testing Toolshop
+
+**Prompt:**
+> Build a QA risk register for Practice Software Testing Toolshop.
+> Structure each row as: Flow | What Could Go Wrong | Business Impact | Test Priority | Coverage Type | Tag
+> Flows to cover: registration, login, product search, cart management, quantity update, checkout, invoice confirmation (double-confirm), invoice retrieval.
+> For each risk: explain WHY it's a risk, not just that it exists.
+> End with a 3-sentence test strategy summary.
+
+**AI Response Summary:**
+Risk register with 20 rows across 8 flows, each with causal risk explanation, priority, coverage type, and smoke/regression tag. Closes with a 3-sentence test strategy.
+
+**Validation Notes:**
+Risks derived from reconnaissance (Entry 1), assessment ACs, and known Toolshop quirks (double-confirm, password rules, address auto-fill, 4-step checkout).
+
+---
+
+### QA Risk Register
+
+| Flow | What Could Go Wrong | Business Impact | Test Priority | Coverage Type | Tag |
+|------|---------------------|-----------------|---------------|---------------|-----|
+| **Registration** | Duplicate email accepted without clear error | A second account may be created or the user gets a generic failure with no guidance to log in instead — because email is the primary identity key, this causes support churn and blocks the user from reaching checkout under the account they intended to use | P1 | Manual + UI | @Regression |
+| **Registration** | Password rules pass on UI but fail on server (or vice versa) | The form shows a green strength meter but submission is rejected — because registration has 4 independent rules (length, case, number, symbol), a mismatch between client and server validation leaves users in a retry loop with no path to account creation, blocking the entire purchase funnel | P1 | Manual + UI | @Regression |
+| **Registration** | Address auto-fill populates wrong street/city from postal code + house number | Billing data saved to the user profile is incorrect — because checkout reuses registration address and the auto-fill depends on an external lookup, a wrong address means invoices ship to invalid locations and COD orders cannot be fulfilled | P2 | Manual + UI | @Regression |
+| **Registration** | Required fields (DOB, phone, country) accept invalid or empty values | A user record is created with incomplete data — because downstream checkout and invoice generation require valid billing details, partial registration appears to succeed but causes failures two steps later in the wizard | P2 | Manual | @Regression |
+| **Login** | Valid credentials rejected after successful registration | User cannot access cart, checkout, or invoices — because the auth token/session is the gate for every server-side state operation, a login failure immediately after registration means the registration investment is wasted and no purchase is possible | P1 | UI + API | @Smoke |
+| **Login** | Invalid credentials do not show a clear error message | User cannot distinguish between wrong password, unregistered email, or server error — because without actionable feedback, users retry indefinitely or abandon the site, directly reducing conversion on every subsequent visit | P2 | UI | @Regression |
+| **Login** | Session expires mid-checkout without warning | User completes billing and payment steps but submission fails silently — because the 4-step checkout wizard spans multiple pages and session timeout is not surfaced, the user loses cart and form data and must restart, increasing abandonment at the highest-friction point | P1 | UI | @Regression |
+| **Product Search** | Search returns zero results for a known existing product | User cannot find products to purchase — because search is the primary discovery path when users know what they want, a broken index or case-sensitivity bug makes the catalog appear empty even when products exist | P2 | UI | @Regression |
+| **Product Search** | Search results include products outside the query scope | User adds wrong item to cart — because imprecise matching (partial token, category bleed) leads to incorrect product selection, which propagates through cart totals, checkout, and invoice line items | P3 | UI | @Regression |
+| **Product Search** | Search combined with category filter returns stale/unfiltered results | User sees products from the wrong category — because Angular SPA re-renders asynchronously, a race between filter application and search query can show a mixed result set, causing the user to add unintended items | P3 | UI | @Regression |
+| **Cart Management** | Add-to-cart succeeds on UI but cart badge count does not update | User believes the cart is empty and abandons purchase — because the header badge is the only persistent cart indicator across pages, a desync between API response and UI state causes the user to re-add items or leave | P1 | UI + API | @Smoke |
+| **Cart Management** | Cart contents lost after login (guest cart not merged) | Items added before login disappear — because cart is server-side and tied to session/user ID, failure to merge anonymous cart into authenticated cart means the user must re-browse, adding friction at the login → checkout transition | P1 | UI | @Smoke |
+| **Cart Management** | Remove item does not update line totals or cart is not empty after last item removed | Checkout blocked with phantom items or wrong total — because the checkout wizard reads cart state server-side, stale line items cause payment amount mismatches or prevent proceeding to billing | P2 | UI | @Regression |
+| **Quantity Update** | Increasing quantity does not recalculate line total or cart total | User pays wrong amount at checkout — because quantity × unit price is computed server-side and displayed in the cart, a failure to update totals means the invoice amount does not match what the user saw, creating a trust and reconciliation issue | P1 | UI + API | @Regression |
+| **Quantity Update** | Quantity set to 0 or negative is accepted | Order placed for zero items or system error at checkout — because quantity validation is a boundary check, accepting invalid values either creates empty orders or crashes the checkout API, blocking invoice generation entirely | P2 | UI | @Regression |
+| **Quantity Update** | Quantity exceeds available stock without warning | Order confirmed for unavailable inventory — because the Toolshop does not always surface stock limits in the UI, over-ordering leads to invoice generation for items that cannot be fulfilled, breaking the order-to-delivery chain | P3 | Manual + UI | @Regression |
+| **Checkout** | User can skip checkout steps (billing or payment) via direct URL | Order created without valid billing or payment method — because the wizard enforces a 4-step sequence (Sign in → Billing → Payment → Confirm), bypassing a step via URL navigation creates incomplete orders that fail at invoice generation | P1 | UI | @Smoke |
+| **Checkout** | Cash on Delivery option missing or not persisted | User cannot complete purchase per assessment AC2 — because COD is the mandated payment method in the assessment acceptance criteria, its absence or failure to save blocks the entire E2E purchase flow | P1 | UI | @Smoke |
+| **Checkout** | Billing address not pre-filled from registration profile | User must re-enter address manually, increasing abandonment — because the registration form captures full address with auto-fill, failure to propagate this data to checkout step 2 adds redundant data entry at the highest drop-off point | P2 | UI | @Regression |
+| **Invoice Confirmation** | Single Confirm click does not generate invoice (double-confirm required) | User believes order is complete but no invoice exists — because the application requires **two consecutive Confirm clicks** (undocumented in UI, only in assessment guide), testers and real users who click once leave the order in an unconfirmed state with no invoice, no error, and no recovery path | P1 | Manual + UI | @Smoke |
+| **Invoice Confirmation** | Double-confirm creates duplicate invoices for the same order | User sees two invoices for one purchase — because the confirm endpoint may not be idempotent, rapid double-clicking or retry logic could fire twice, causing accounting discrepancies and customer confusion | P2 | UI + API | @Regression |
+| **Invoice Confirmation** | Confirm step shows success but invoice ID is null or missing | User cannot reference or retrieve the order — because the invoice ID is the key used in My Invoices and API lookups, a success message without a valid ID makes the purchase untraceable | P1 | UI + API | @Smoke |
+| **Invoice Retrieval** | Completed invoice not visible in My Invoices list | User cannot verify purchase was successful — because My Invoices is the only post-purchase confirmation surface in the UI (no email receipt), a missing entry means the user has no proof of order and cannot dispute or track delivery | P1 | UI + API | @Smoke |
+| **Invoice Retrieval** | Invoice detail page shows wrong items, quantities, or totals vs cart | User disputes order accuracy — because the invoice is the legal record of the transaction, any mismatch between cart contents and invoice line items indicates a data integrity bug in the order-to-invoice pipeline | P1 | UI + API | @Regression |
+| **Invoice Retrieval** | Invoice list accessible without authentication | Customer order history exposed to unauthorized users — because invoices contain PII (billing address, order details), missing auth guard on `/account/invoices` is a security vulnerability with regulatory implications | P1 | UI + API | @Regression |
+
+---
+
+### Test Strategy Summary
+
+Prioritize **P1 risks on the critical purchase path** — registration, login, add-to-cart, COD checkout, double-confirm invoice, and invoice retrieval — as @Smoke tests that run on every build, because failures here block revenue and both assessment ACs entirely. Layer **P2 regression tests** for negative paths (invalid login, weak password, quantity boundaries, billing pre-fill) and the double-confirm edge cases, because these catch the silent failures and data-integrity bugs that pass smoke but break real user sessions. Defer **P3 risks** (search precision, stock limits) unless capacity allows, since they affect discovery and edge cases but do not block the core register → purchase → invoice journey that the assessment evaluates.

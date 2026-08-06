@@ -1,37 +1,138 @@
 const { PlaywrightHelper } = require('../seleniumUtils/PlaywrightHelper');
 
+const { parsePrice, roundCurrency } = require('../utils/priceParser');
+
+
+
 class CartPage {
+
   constructor(page) {
+
     this.page = page;
+
     this.helper = new PlaywrightHelper(page);
-    this.lineItems = page.locator('[data-test="cart-item"], .cart-item, table tbody tr');
-    this.quantityInput = page.locator('[data-test="product-quantity"], input[type="number"]').first();
-    this.lineTotal = page.locator('[data-test="line-total"], .line-total').first();
-    this.cartTotal = page.locator('[data-test="cart-total"], .cart-total, .total').first();
-    this.cartBadge = page.locator('[data-test="cart-quantity"], .cart-badge');
-    this.proceedToCheckout = page.getByRole('link', { name: /checkout|proceed/i });
+
+    this.navCartLink = page.locator('[data-test="nav-cart"]');
+
+    this.lineItems = page.locator('tbody tr').filter({ has: page.getByRole('spinbutton') });
+
+    this.quantityInputs = page.getByRole('spinbutton');
+
+    this.cartTotalValue = page.locator('tr', { has: page.locator('strong', { hasText: 'Total' }) }).locator('td').nth(3);
+
+    this.proceedToCheckoutButton = page.getByRole('button', { name: 'Proceed to checkout' });
+
   }
+
+
+
+  async openFromNav() {
+
+    await this.helper.click(this.navCartLink, 'nav cart');
+
+    await this.waitForLoaded();
+
+  }
+
+
 
   async goto() {
-    await this.page.goto('/cart');
+
+    await this.openFromNav();
+
   }
 
-  async updateQuantity(quantity) {
-    await this.helper.fill(this.quantityInput, String(quantity), 'quantity');
-    await this.quantityInput.press('Tab');
+
+
+  async waitForLoaded() {
+
+    await this.helper.waitForVisible(this.lineItems.first());
+
   }
 
-  async getLineItemCount() {
+
+
+  async getLineCount() {
+
     return this.lineItems.count();
+
   }
+
+
+
+  async getLineUnitPrice(lineIndex) {
+
+    const row = this.lineItems.nth(lineIndex);
+
+    const priceCell = row.locator('td').nth(2);
+
+    return parsePrice(await priceCell.innerText());
+
+  }
+
+
+
+  async getLineTotal(lineIndex) {
+
+    const row = this.lineItems.nth(lineIndex);
+
+    const totalCell = row.locator('td').nth(3);
+
+    return parsePrice(await totalCell.innerText());
+
+  }
+
+
+
+  async updateLineQuantity(lineIndex, quantity) {
+
+    const input = this.quantityInputs.nth(lineIndex);
+
+    await this.helper.fill(input, String(quantity), `line ${lineIndex} quantity`);
+
+    await input.press('Tab');
+
+    await this.page.waitForLoadState('networkidle');
+
+  }
+
+
 
   async getCartTotal() {
-    return this.cartTotal.innerText();
+
+    return parsePrice(await this.cartTotalValue.innerText());
+
   }
+
+
+
+  async calculateExpectedCartTotal() {
+
+    const lineCount = await this.getLineCount();
+
+    let sum = 0;
+
+    for (let i = 0; i < lineCount; i += 1) {
+
+      sum += await this.getLineTotal(i);
+
+    }
+
+    return roundCurrency(sum);
+
+  }
+
+
 
   async proceedToCheckout() {
-    await this.helper.click(this.proceedToCheckout, 'proceed to checkout');
+
+    await this.helper.click(this.proceedToCheckoutButton, 'proceed to checkout');
+
   }
+
 }
 
+
+
 module.exports = { CartPage };
+

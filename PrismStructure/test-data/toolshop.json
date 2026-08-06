@@ -17,7 +17,11 @@
   },
   "checkout": {
     "paymentMethod": "cash-on-delivery",
-    "paymentMethodLabel": "Cash on Delivery"
+    "paymentMethodLabel": "Cash on Delivery",
+    "billingCountry": "United States of America (the)",
+    "billingPostalCode": "33101",
+    "billingHouseNumber": "42",
+    "billingState": "Florida"
   },
   "invoice": {
     "billingStreet": "Zoey Shore",
@@ -40,5 +44,16 @@
   "cart": {
     "defaultQuantity": 1,
     "updatedQuantity": 2
+  },
+  "purchaseFlow": {
+    "user": {
+      "email": "customer3@practicesoftwaretesting.com",
+      "passwordEnvKey": "testUser3Password"
+    },
+    "productSearchPrimary": "claw hammer",
+    "productSearchSecondary": "combination pliers",
+    "productSearchFallbacks": ["slip joint pliers", "pliers", "hammer", "saw", "wrench"],
+    "secondaryCategory": "Power Tools",
+    "updatedLineQuantity": 2
   }
 }

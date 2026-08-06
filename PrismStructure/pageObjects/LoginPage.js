@@ -30,6 +30,7 @@ class LoginPage {
     await this.goto();
     await this.fillCredentials(email, password);
     await this.submitLogin();
+    await this.navSignIn.waitFor({ state: 'hidden', timeout: 15000 });
   }
 }
 

@@ -221,3 +221,18 @@ Risks derived from reconnaissance (Entry 1), assessment ACs, and known Toolshop 
 ### Test Strategy Summary
 
 Prioritize **P1 risks on the critical purchase path** — registration, login, add-to-cart, COD checkout, double-confirm invoice, and invoice retrieval — as @Smoke tests that run on every build, because failures here block revenue and both assessment ACs entirely. Layer **P2 regression tests** for negative paths (invalid login, weak password, quantity boundaries, billing pre-fill) and the double-confirm edge cases, because these catch the silent failures and data-integrity bugs that pass smoke but break real user sessions. Defer **P3 risks** (search precision, stock limits) unless capacity allows, since they affect discovery and edge cases but do not block the core register → purchase → invoice journey that the assessment evaluates.
+
+---
+
+## Entry 3: Manual Functional Test Suite — FunctionalTestCase.csv
+
+**Prompt:**
+> Design a manual functional test suite for the Practice Software Testing Toolshop.
+> Rules: exactly 8 test cases; span registration, login (valid + invalid), product search, cart (add + quantity change), checkout COD, invoice verification, at least 1 edge/negative; independently executable; @smoke or @regression tags; CSV columns specified; pipe-separated steps; leave ActualResult and Status empty.
+
+**AI Response Summary:**
+Created `FunctionalTestCase.csv` with 8 self-contained manual tests (4 @Smoke, 4 @Regression) mapped to AC1/AC2 using default Toolshop accounts and realistic non-personal test data.
+
+**Validation Notes:**
+Each test includes its own login/setup steps. TC-M03 covers negative login. TC-M07 encodes double-confirm. TC-M08 performs checkout then verifies invoice in same test for independence.
+

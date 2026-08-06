@@ -1,0 +1,937 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\Ujjawal Panwar\\my-project\\PrismStructure\\node_modules\\@playwright\\test\\cli.js",
+      "test"
+    ],
+    "configFile": "C:\\Users\\Ujjawal Panwar\\my-project\\PrismStructure\\playwright.config.js",
+    "rootDir": "C:/Users/Ujjawal Panwar/my-project/PrismStructure/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 8
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "C:/Users/Ujjawal Panwar/my-project/PrismStructure/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 8
+        },
+        "id": "ui-chromium",
+        "name": "ui-chromium",
+        "testDir": "C:/Users/Ujjawal Panwar/my-project/PrismStructure/tests/ui",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "C:/Users/Ujjawal Panwar/my-project/PrismStructure/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 8
+        },
+        "id": "api-tests",
+        "name": "api-tests",
+        "testDir": "C:/Users/Ujjawal Panwar/my-project/PrismStructure/tests/api",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "html",
+        {
+          "outputFolder": "C:\\Users\\Ujjawal Panwar\\my-project\\PrismStructure\\reports\\html",
+          "open": "never"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "C:\\Users\\Ujjawal Panwar\\my-project\\PrismStructure\\reports\\results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.62.1",
+    "workers": 8,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "ui\\auth-login-invalid.spec.js",
+      "file": "ui/auth-login-invalid.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Auth login validation",
+          "file": "ui/auth-login-invalid.spec.js",
+          "line": 5,
+          "column": 6,
+          "specs": [
+            {
+              "title": "rejects login with wrong password and shows exact error message @regression",
+              "ok": true,
+              "tags": [
+                "regression",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "ui-chromium",
+                  "projectName": "ui-chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7539,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "[PlaywrightHelper] Fill: email\n"
+                        },
+                        {
+                          "text": "[PlaywrightHelper] Fill: password\n"
+                        },
+                        {
+                          "text": "[PlaywrightHelper] Click: login submit\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-06T16:00:32.596Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "aaa04f0fd5fe107f90b8-896375d3f83266ce3e01",
+              "file": "ui/auth-login-invalid.spec.js",
+              "line": 6,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ui\\auth-register.spec.js",
+      "file": "ui/auth-register.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Auth registration and login",
+          "file": "ui/auth-register.spec.js",
+          "line": 5,
+          "column": 6,
+          "specs": [
+            {
+              "title": "registers a new user, logs in, and shows account name in nav @smoke",
+              "ok": true,
+              "tags": [
+                "smoke",
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "ui-chromium",
+                  "projectName": "ui-chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 12142,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "[PlaywrightHelper] Fill: first name\n"
+                        },
+                        {
+                          "text": "[PlaywrightHelper] Fill: last name\n"
+                        },
+                        {
+                          "text": "[PlaywrightHelper] Fill: date of birth\n"
+                        },
+                        {
+                          "text": "[PlaywrightHelper] Fill: postal code\n"
+                        },
+                        {
+                          "text": "[PlaywrightHelper] Fill: house number\n"
+                        },
+                        {
+                          "text": "[PlaywrightHelper] Fill: phone\n"
+                        },
+                        {
+                          "text": "[PlaywrightHelper] Fill: email\n"
+                        },
+                        {
+                          "text": "[PlaywrightHelper] Fill: password\n"
+                        },
+                        {
+                          "text": "[PlaywrightHelper] Click: register submit\n"
+                        },
+                        {
+                          "text": "[PlaywrightHelper] Fill: email\n"
+                        },
+                        {
+                          "text": "[PlaywrightHelper] Fill: password\n"
+                        },
+                        {
+                          "text": "[PlaywrightHelper] Click: login submit\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-06T16:00:32.647Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1312ae0ab972381e7eb9-35683a6a756275ccaf4e",
+              "file": "ui/auth-register.spec.js",
+              "line": 6,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ui\\cart-remove-item.spec.js",
+      "file": "ui/cart-remove-item.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Cart management",
+          "file": "ui/cart-remove-item.spec.js",
+          "line": 6,
+          "column": 6,
+          "specs": [
+            {
+              "title": "removes a line item and blocks checkout on an empty cart @regression",
+              "ok": true,
+              "tags": [
+                "regression",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "ui-chromium",
+                  "projectName": "ui-chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 17536,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "[PlaywrightHelper] Fill: email\n"
+                        },
+                        {
+                          "text": "[PlaywrightHelper] Fill: password\n"
+                        },
+                        {
+                          "text": "[PlaywrightHelper] Click: login submit\n"
+                        },
+                        {
+                          "text": "[PlaywrightHelper] Click: search submit\n"
+                        },
+                        {
+                          "text": "[PlaywrightHelper] Click: in-stock product 0\n"
+                        },
+                        {
+                          "text": "[PlaywrightHelper] Click: add to cart\n"
+                        },
+                        {
+                          "text": "[PlaywrightHelper] Click: nav cart\n"
+                        },
+                        {
+                          "text": "[PlaywrightHelper] Click: remove line 0\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-06T16:00:32.835Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "7fcb215b9cfd9585f59f-a9b720cf5e807e2dc306",
+              "file": "ui/cart-remove-item.spec.js",
+              "line": 7,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ui\\home.spec.js",
+      "file": "ui/home.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Home Page",
+          "file": "ui/home.spec.js",
+          "line": 4,
+          "column": 6,
+          "specs": [
+            {
+              "title": "loads Toolshop home page @smoke",
+              "ok": true,
+              "tags": [
+                "smoke",
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "ui-chromium",
+                  "projectName": "ui-chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 24902,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-06T16:00:33.041Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "379953442ddfc3019abd-8bdad6a33adcd6b16398",
+              "file": "ui/home.spec.js",
+              "line": 5,
+              "column": 3
+            },
+            {
+              "title": "search returns results for valid keyword @regression",
+              "ok": true,
+              "tags": [
+                "regression",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "ui-chromium",
+                  "projectName": "ui-chromium",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 4,
+                      "status": "passed",
+                      "duration": 6505,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "[PlaywrightHelper] Click: search submit\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-06T16:00:32.622Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "379953442ddfc3019abd-7423635799db0f065499",
+              "file": "ui/home.spec.js",
+              "line": 10,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ui\\purchase-journey.spec.js",
+      "file": "ui/purchase-journey.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Purchase journey",
+          "file": "ui/purchase-journey.spec.js",
+          "line": 6,
+          "column": 6,
+          "specs": [
+            {
+              "title": "completes end-to-end COD purchase and verifies invoice @smoke @regression",
+              "ok": true,
+              "tags": [
+                "smoke",
+                "regression",
+                "smoke",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "ui-chromium",
+                  "projectName": "ui-chromium",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 5,
+                      "status": "passed",
+                      "duration": 32804,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "[PlaywrightHelper] Fill: email\n"
+                        },
+                        {
+                          "text": "[PlaywrightHelper] Fill: password\n"
+                        },
+                        {
+                          "text": "[PlaywrightHelper] Click: login submit\n"
+                        },
+                        {
+                          "text": "[PlaywrightHelper] Click: search submit\n"
+                        },
+                        {
+                          "text": "[PlaywrightHelper] Click: in-stock product 0\n"
+                        },
+                        {
+                          "text": "[PlaywrightHelper] Click: add to cart\n"
+                        },
+                        {
+                          "text": "[PlaywrightHelper] Click: in-stock product 0\n"
+                        },
+                        {
+                          "text": "[PlaywrightHelper] Click: add to cart\n"
+                        },
+                        {
+                          "text": "[PlaywrightHelper] Click: nav cart\n"
+                        },
+                        {
+                          "text": "[PlaywrightHelper] Fill: line 0 quantity\n"
+                        },
+                        {
+                          "text": "[PlaywrightHelper] Click: proceed to checkout\n"
+                        },
+                        {
+                          "text": "[PlaywrightHelper] Click: advance checkout step 1\n"
+                        },
+                        {
+                          "text": "[PlaywrightHelper] Fill: billing postal code\n"
+                        },
+                        {
+                          "text": "[PlaywrightHelper] Fill: billing house number\n"
+                        },
+                        {
+                          "text": "[PlaywrightHelper] Fill: billing state\n"
+                        },
+                        {
+                          "text": "[PlaywrightHelper] Click: advance checkout step 2\n"
+                        },
+                        {
+                          "text": "[PlaywrightHelper] Click: confirm (1st)\n"
+                        },
+                        {
+                          "text": "[PlaywrightHelper] Click: confirm (2nd)\n"
+                        },
+                        {
+                          "text": "[PlaywrightHelper] Click: latest invoice link\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-06T16:00:33.004Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1240f29e891d50640409-9c6d52f200ed04253009",
+              "file": "ui/purchase-journey.spec.js",
+              "line": 9,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ui\\search-no-results.spec.js",
+      "file": "ui/search-no-results.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Product search",
+          "file": "ui/search-no-results.spec.js",
+          "line": 5,
+          "column": 6,
+          "specs": [
+            {
+              "title": "shows empty state when keyword matches no products @regression",
+              "ok": true,
+              "tags": [
+                "regression",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "ui-chromium",
+                  "projectName": "ui-chromium",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 6,
+                      "status": "passed",
+                      "duration": 7424,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "[PlaywrightHelper] Click: search submit\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-06T16:00:33.002Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "59e3dac95949db9607fe-be9537e1f66b05ee1f25",
+              "file": "ui/search-no-results.spec.js",
+              "line": 6,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "api\\api-negative.spec.js",
+      "file": "api/api-negative.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "API negative scenarios",
+          "file": "api/api-negative.spec.js",
+          "line": 36,
+          "column": 6,
+          "specs": [
+            {
+              "title": "rejects login with a valid email and wrong password @regression",
+              "ok": true,
+              "tags": [
+                "regression",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "api-tests",
+                  "projectName": "api-tests",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 7,
+                      "status": "passed",
+                      "duration": 1548,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "[ApiHelper] POST /users/login\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-06T16:00:32.769Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "b346edd69c8e44ae1e85-72341896ddb45acf89d0",
+              "file": "api/api-negative.spec.js",
+              "line": 37,
+              "column": 3
+            },
+            {
+              "title": "rejects invoice requests with a malformed bearer token @regression",
+              "ok": true,
+              "tags": [
+                "regression",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "api-tests",
+                  "projectName": "api-tests",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 7,
+                      "status": "passed",
+                      "duration": 527,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "[ApiHelper] GET /invoices\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-06T16:00:34.502Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "b346edd69c8e44ae1e85-c94c04a892adfde43539",
+              "file": "api/api-negative.spec.js",
+              "line": 53,
+              "column": 3
+            },
+            {
+              "title": "rejects invoice creation when a required billing field is missing @regression",
+              "ok": true,
+              "tags": [
+                "regression",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "api-tests",
+                  "projectName": "api-tests",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 7,
+                      "status": "passed",
+                      "duration": 2616,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "[ApiHelper] POST /users/register\n"
+                        },
+                        {
+                          "text": "[ApiHelper] POST /users/login\n"
+                        },
+                        {
+                          "text": "[ApiHelper] POST /carts\n"
+                        },
+                        {
+                          "text": "[ApiHelper] POST /invoices\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-06T16:00:35.046Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "b346edd69c8e44ae1e85-66699dbb4c9ac2c38531",
+              "file": "api/api-negative.spec.js",
+              "line": 69,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "api\\auth.spec.js",
+      "file": "api/auth.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Auth API",
+          "file": "api/auth.spec.js",
+          "line": 6,
+          "column": 6,
+          "specs": [
+            {
+              "title": "login returns access token @smoke",
+              "ok": true,
+              "tags": [
+                "smoke",
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "api-tests",
+                  "projectName": "api-tests",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 7,
+                      "status": "passed",
+                      "duration": 795,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "[ApiHelper] POST /users/login\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-06T16:00:37.710Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d5ed79a6b333c2ba7209-e036393910357283d15b",
+              "file": "api/auth.spec.js",
+              "line": 7,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "api\\order-lifecycle.spec.js",
+      "file": "api/order-lifecycle.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Order lifecycle API",
+          "file": "api/order-lifecycle.spec.js",
+          "line": 120,
+          "column": 6,
+          "specs": [
+            {
+              "title": "registers, logs in, lists products, and creates cart @smoke",
+              "ok": true,
+              "tags": [
+                "smoke",
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "api-tests",
+                  "projectName": "api-tests",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 7,
+                      "status": "passed",
+                      "duration": 2628,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "[ApiHelper] POST /users/register\n"
+                        },
+                        {
+                          "text": "[ApiHelper] POST /users/login\n"
+                        },
+                        {
+                          "text": "[ApiHelper] GET /products\n"
+                        },
+                        {
+                          "text": "[ApiHelper] POST /carts\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-06T16:00:38.540Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d62a98c4a0f7119433d8-96cdf29f0cb6167d2d61",
+              "file": "api/order-lifecycle.spec.js",
+              "line": 121,
+              "column": 3
+            },
+            {
+              "title": "completes full order lifecycle through invoice @regression",
+              "ok": true,
+              "tags": [
+                "regression",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "api-tests",
+                  "projectName": "api-tests",
+                  "results": [
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 4,
+                      "status": "passed",
+                      "duration": 4945,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "[ApiHelper] POST /users/register\n"
+                        },
+                        {
+                          "text": "[ApiHelper] POST /users/login\n"
+                        },
+                        {
+                          "text": "[ApiHelper] GET /products\n"
+                        },
+                        {
+                          "text": "[ApiHelper] POST /carts\n"
+                        },
+                        {
+                          "text": "[ApiHelper] POST /carts/01kzbwwejrfrh7dp7r80227qjm\n"
+                        },
+                        {
+                          "text": "[ApiHelper] GET /carts/01kzbwwejrfrh7dp7r80227qjm\n"
+                        },
+                        {
+                          "text": "[ApiHelper] POST /invoices\n"
+                        },
+                        {
+                          "text": "[ApiHelper] GET /invoices\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-06T16:00:41.911Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d62a98c4a0f7119433d8-405e4adc4c65ba7f3ae6",
+              "file": "api/order-lifecycle.spec.js",
+              "line": 136,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-08-06T16:00:30.383Z",
+    "duration": 36431.159999999996,
+    "expected": 13,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

@@ -1,4 +1,4 @@
-// Added because the purchase journey only adds and updates lines; remove is the highest-risk
+// AC2 — cart remove and empty-cart guard (maps to TC-M06 cart mutation risk)
 // uncovered cart mutation — it must sync rows, totals, and the nav badge via DELETE /carts.
 const { test, expect } = require('../../base/BaseTest');
 const { env } = require('../../utils/env');

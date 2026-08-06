@@ -88,7 +88,22 @@ Credentials for the public demo users (`customer@`, `customer2@`, `customer3@`) 
 - **Guest checkout API** (`POST /invoices/guest`) and catalog CRUD (brands, categories, products POST).
 - **Cross-user cart isolation** — probed on live API; `GET /carts/{id}` returns 200 for another user’s cart, so a 403 test was not implemented.
 - **Selenium / Java Prism** — assessment requires Playwright JS; only Prism *naming/layering* was adopted (`PrismStructure/README.md`).
-- **Assessment items not yet in repo:** root `readme.md`, `.cursor/` rules/skills, and two additional `ai-prompts/` files referenced in the participant guide (three prompt logs exist today: `requirements-and-planning.md`, `test-design.md`, `automation-and-debugging.md`).
+
+---
+
+## 4a. Requirement traceability (AC → automation)
+
+| AC | Manual TC | Automated spec | Tag |
+|----|-----------|----------------|-----|
+| AC1 | TC-M01 | `tests/ui/auth-register.spec.js` | @smoke |
+| AC1 | TC-M02 | `tests/api/auth.spec.js`, `tests/ui/home.spec.js` (load) | @smoke |
+| AC1 | TC-M03 | `tests/ui/auth-login-invalid.spec.js`, `tests/api/api-negative.spec.js` (wrong password) | @regression |
+| AC2 | TC-M04 | `tests/ui/search-no-results.spec.js` | @regression |
+| AC2 | TC-M05 | `tests/ui/purchase-journey.spec.js`, `tests/ui/home.spec.js` (search) | @smoke / @regression |
+| AC2 | TC-M06 | `tests/ui/purchase-journey.spec.js` (qty), `tests/ui/cart-remove-item.spec.js` | @regression |
+| AC2 | TC-M07–M08 | `tests/ui/purchase-journey.spec.js` | @smoke @regression |
+| AC1 + AC2 | — | `tests/api/order-lifecycle.spec.js` | @smoke / @regression |
+| AC1 + AC2 | — | `tests/api/api-negative.spec.js` (×3) | @regression |
 
 ---
 
@@ -115,9 +130,9 @@ I did not copy AI-generated tests or locators without running them against the l
 | **Cross-check docs** | Compared AI’s API summary to OpenAPI JSON and to assessment AC payloads in `toolshop.json`. | Billing payload for invoices matches the example in `requirements-and-planning.md`. |
 | **Review locators** | Updated page objects when scaffold selectors did not match the live app (e.g. `[data-test="add-to-cart"]`, `[data-test="nav-cart"]`, invoice fields as textboxes). | Changes in `ProductPage.js`, `CartPage.js`, `InvoicePage.js`, `LoginPage.js`. |
 | **Reject invalid scenarios** | Dropped AI-suggested cross-user cart 403 test after live API returned 200 for another user’s cart ID. | Documented in `api-negative.spec.js` design rationale. |
-| **Secrets hygiene** | Kept `.env` gitignored; verified run logs and HTML reports do not print bearer tokens. | `ApiHelper` logs HTTP paths only, not request bodies. |
+| **Secrets hygiene** | Kept `.env` gitignored; redacted `.env.example` to placeholders; verified run logs do not print bearer tokens. | `ApiHelper` logs HTTP paths only, not request bodies. |
 
-**Known residual risk:** `purchase-journey.spec.js` can time out on `/auth/login` under full parallel UI runs (`LoginPage.goto`); smoke/regression grep runs usually pass. A `domcontentloaded` navigation change is identified but not yet committed.
+**Login navigation:** `LoginPage.goto()` uses `waitUntil: 'domcontentloaded'` to reduce flaky timeouts under parallel UI runs.
 
 ---
 
@@ -132,16 +147,16 @@ I did not copy AI-generated tests or locators without running them against the l
 **Shared with AI (intentionally, for this public practice app)**
 
 - Public Toolshop demo account *names* (e.g. `customer@practicesoftwaretesting.com`) — these are documented by the application vendor.
-- Structural test data in `toolshop.json` and `FunctionalTestCase.csv` (including the public registration password pattern `ShopTest1!` and demo passwords listed in `.env.example`).
+- Structural test data in `toolshop.json` (registration password **pattern** `ShopTest1!` for validation rules; invalid password `WrongPass99!` for negative tests).
 
 **Repository policy**
 
 - `.env` is listed in `PrismStructure/.gitignore` and is not committed.
-- `.env.example` contains placeholder/demo values for setup only.
+- `.env.example` uses `<your-demo-password>` placeholders only.
 - Bearer tokens are obtained at runtime from login responses and passed via `ApiHelper.authHeaders(token)` — never hardcoded in specs.
 
 ---
 
 ## 8. How This Workflow Applies to a Real Project
 
-On this assessment I treated AI as a **drafting and analysis assistant**, not an oracle: I anchored every automation artifact in runnable code under `PrismStructure/`, kept manual and automated cases traceable to AC1/AC2 via IDs and tags, and used short live probes to overturn wrong assumptions (cart URL, double-confirm checkout, invoice status code). In a production team I would reuse the same pattern—requirements and risk notes in `ai-prompts/`, a bounded smoke/regression split in Playwright projects, secrets in CI env vars, and a hard rule that no AI-generated locator or API path merges without a green local run plus peer review on anything touching payments or auth. The main gap I would close before calling this submission-complete is finishing root `readme.md`, `.cursor/` rules, filling `ActualResult`/`Status` in `FunctionalTestCase.csv` after a full manual pass, and stabilizing the login navigation flake before relying on `test:ui` in CI.
+On this assessment I treated AI as a **drafting and analysis assistant**, not an oracle: I anchored every automation artifact in runnable code under `PrismStructure/`, kept manual and automated cases traceable to AC1/AC2 via IDs and tags, and used short live probes to overturn wrong assumptions (cart URL, double-confirm checkout, invoice status code). In a production team I would reuse the same pattern—requirements and risk notes in `ai-prompts/`, a bounded smoke/regression split in Playwright projects, secrets in CI env vars, and a hard rule that no AI-generated locator or API path merges without a green local run plus peer review on anything touching payments or auth.

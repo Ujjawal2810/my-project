@@ -1,3 +1,4 @@
+// AC1 — registration and login smoke (maps to TC-M01)
 const { test, expect } = require('../../base/BaseTest');
 const { buildUniqueRegistrationUser } = require('../../utils/registrationFactory');
 

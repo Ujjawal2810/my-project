@@ -1,6 +1,8 @@
 node_modules/
 reports/html/
+!reports/evidence/
 reports/results.json
+!reports/evidence/results.json
 test-results/
 playwright-report/
 .env

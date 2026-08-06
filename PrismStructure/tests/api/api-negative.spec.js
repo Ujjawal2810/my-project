@@ -1,3 +1,4 @@
+// AC1 + AC2 — negative API paths (invalid login, auth middleware, invoice validation)
 const { test, expect } = require('@playwright/test');
 const { AuthApi } = require('../../apiClients/AuthApi');
 const { CartApi } = require('../../apiClients/CartApi');

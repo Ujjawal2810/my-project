@@ -1,0 +1,15 @@
+---
+description: Toolshop QA assessment conventions for Playwright automation and submissions
+globs: PrismStructure/**/*
+alwaysApply: true
+---
+
+# Toolshop QA Rules
+
+- Run tests from `PrismStructure/` using npm scripts defined in `package.json` only.
+- Never commit `.env` or bearer tokens; load credentials from environment variables.
+- UI logic belongs in `pageObjects/`; API logic in `apiClients/`; specs stay thin.
+- Tag every automated test `@smoke` or `@regression`; keep each tier within 5–8 tests.
+- Map automated specs to AC1/AC2 in file headers or `project-info.md` traceability table.
+- Prefer Playwright auto-waiting over fixed sleeps; probe live SUT before trusting AI locators.
+- Document application quirks (e.g. checkout double Confirm) in page objects and comments.

@@ -1,4 +1,4 @@
-// Added because existing search coverage only asserts positive hits; a broken empty-state
+// AC2 — search edge case / zero results (maps to TC-M04)
 // or uncleared product grid would show stale results and mislead shoppers (TC-M04 / P2 search risk).
 const { test, expect } = require('../../base/BaseTest');
 

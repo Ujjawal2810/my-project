@@ -1,3 +1,4 @@
+// AC1 + AC2 — API register/login/cart smoke; AC2 full lifecycle regression
 const { test, expect } = require('@playwright/test');
 const { AuthApi } = require('../../apiClients/AuthApi');
 const { ProductsApi } = require('../../apiClients/ProductsApi');

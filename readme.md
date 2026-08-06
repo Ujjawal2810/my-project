@@ -97,6 +97,7 @@ After any Playwright run, reports are written under `PrismStructure/`:
 |--------|------|------------------|
 | **HTML report** | `PrismStructure/reports/html/` | `playwright.config.js` → `reporter` `html` |
 | **JSON results** | `PrismStructure/reports/results.json` | `playwright.config.js` → `reporter` `json` |
+| **Committed evidence** | `PrismStructure/reports/evidence/` | Summary, log, JSON copy, HTML + PNG after green `test:all` |
 | **Failure screenshots** | `PrismStructure/test-results/` | `screenshot: 'only-on-failure'` |
 | **Traces (on retry)** | `PrismStructure/test-results/` | `trace: 'on-first-retry'` |
 
@@ -107,7 +108,7 @@ cd PrismStructure
 npm run report
 ```
 
-`reports/html/` and `reports/results.json` are gitignored; generate them locally by running tests.
+`reports/html/` and root `reports/results.json` are gitignored; committed pass evidence lives in `reports/evidence/` after a green `npm run test:all`.
 
 ---
 
@@ -115,13 +116,17 @@ npm run report
 
 ```
 my-project/
-├── README.md                    # This file
+├── readme.md                    # This file
 ├── project-info.md              # Assessment submission: scope, AI workflow, tools
 ├── FunctionalTestCase.csv       # Manual test cases (TC-M01–TC-M08)
 ├── ai-prompts/                  # Prompt history (planning, design, automation)
 │   ├── requirements-and-planning.md
 │   ├── test-design.md
-│   └── automation-and-debugging.md
+│   ├── test-data.md
+│   └── documentation-and-summary.md
+├── .cursor/
+│   ├── rules/                   # toolshop-qa.mdc
+│   └── skills/                  # toolshop-qa skill
 └── PrismStructure/              # Playwright framework (run npm commands here)
     ├── playwright.config.js     # UI + API projects, reporters, tags
     ├── package.json

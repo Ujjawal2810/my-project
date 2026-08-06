@@ -1,3 +1,4 @@
+// AC1 — invalid login negative path (maps to TC-M03)
 const { test, expect } = require('../../base/BaseTest');
 const { env } = require('../../utils/env');
 

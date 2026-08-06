@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Toolshop QA — Test Run Summary</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 2rem; background: #f6f8fa; color: #1f2328; }
+    h1 { margin-bottom: 0.25rem; }
+    .meta { color: #57606a; margin-bottom: 1.5rem; }
+    .banner { background: #1a7f37; color: #fff; padding: 1rem 1.25rem; border-radius: 8px; font-size: 1.25rem; font-weight: 600; }
+    table { width: 100%; border-collapse: collapse; background: #fff; margin-top: 1.5rem; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+    th, td { padding: 0.65rem 1rem; text-align: left; border-bottom: 1px solid #d8dee4; }
+    th { background: #f6f8fa; }
+    .pass { color: #1a7f37; font-weight: 600; }
+  </style>
+</head>
+<body>
+  <h1>Toolshop QA — Full Suite</h1>
+  <p class="meta">Command: <code>npm run test:all</code> · 6 August 2026 · Playwright 1.62.x</p>
+  <div class="banner">13 passed · 0 failed · ~36s</div>
+  <table>
+    <thead><tr><th>Project</th><th>Spec</th><th>Test</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td>ui-chromium</td><td>auth-login-invalid</td><td>wrong password error</td><td class="pass">Passed</td></tr>
+      <tr><td>ui-chromium</td><td>auth-register</td><td>register + login @smoke</td><td class="pass">Passed</td></tr>
+      <tr><td>ui-chromium</td><td>cart-remove-item</td><td>remove line + empty checkout</td><td class="pass">Passed</td></tr>
+      <tr><td>ui-chromium</td><td>home</td><td>loads home @smoke</td><td class="pass">Passed</td></tr>
+      <tr><td>ui-chromium</td><td>home</td><td>search results @regression</td><td class="pass">Passed</td></tr>
+      <tr><td>ui-chromium</td><td>purchase-journey</td><td>COD purchase + invoice</td><td class="pass">Passed</td></tr>
+      <tr><td>ui-chromium</td><td>search-no-results</td><td>empty search state</td><td class="pass">Passed</td></tr>
+      <tr><td>api-tests</td><td>api-negative</td><td>wrong password (3 scenarios)</td><td class="pass">Passed</td></tr>
+      <tr><td>api-tests</td><td>auth</td><td>login token @smoke</td><td class="pass">Passed</td></tr>
+      <tr><td>api-tests</td><td>order-lifecycle</td><td>cart smoke + full invoice</td><td class="pass">Passed</td></tr>
+    </tbody>
+  </table>
+</body>
+</html>

@@ -1,3 +1,4 @@
+// AC2 — end-to-end COD purchase and invoice verification (maps to TC-M05–TC-M08)
 const { test, expect } = require('../../base/BaseTest');
 const { resolvePurchaseUser } = require('../../utils/credentialsResolver');
 const { env } = require('../../utils/env');

@@ -4,19 +4,19 @@ class RegisterPage {
   constructor(page) {
     this.page = page;
     this.helper = new PlaywrightHelper(page);
-    this.firstNameInput = page.getByTestId('first-name');
-    this.lastNameInput = page.getByTestId('last-name');
-    this.dobInput = page.getByTestId('dob');
-    this.countrySelect = page.getByTestId('country');
-    this.postalCodeInput = page.getByTestId('postal_code');
-    this.houseNumberInput = page.getByTestId('house_number');
-    this.streetInput = page.getByTestId('street');
-    this.cityInput = page.getByTestId('city');
-    this.stateInput = page.getByTestId('state');
-    this.phoneInput = page.getByTestId('phone');
-    this.emailInput = page.getByTestId('email');
-    this.passwordInput = page.getByTestId('password');
-    this.registerButton = page.getByTestId('register-submit');
+    this.firstNameInput = page.getByRole('textbox', { name: 'First name' });
+    this.lastNameInput = page.getByRole('textbox', { name: 'Last name' });
+    this.dobInput = page.getByRole('textbox', { name: 'Date of Birth *' });
+    this.countrySelect = page.getByRole('combobox', { name: 'Country' });
+    this.postalCodeInput = page.getByRole('textbox', { name: 'Postal code' });
+    this.houseNumberInput = page.getByRole('textbox', { name: 'House number' });
+    this.streetInput = page.getByRole('textbox', { name: 'Street' });
+    this.cityInput = page.getByRole('textbox', { name: 'City' });
+    this.stateInput = page.getByRole('textbox', { name: 'State' });
+    this.phoneInput = page.getByRole('textbox', { name: 'Phone' });
+    this.emailInput = page.getByRole('textbox', { name: 'Email address' });
+    this.passwordInput = page.getByRole('textbox', { name: 'Password' });
+    this.registerButton = page.getByRole('button', { name: 'Register', exact: true });
   }
 
   async goto() {
@@ -33,9 +33,16 @@ class RegisterPage {
     await this.helper.fill(this.postalCodeInput, user.postalCode, 'postal code');
     await this.helper.fill(this.houseNumberInput, user.houseNumber, 'house number');
     await this.streetInput.waitFor({ state: 'visible' });
+    await this.streetInput.waitFor({ state: 'attached' });
+    await this.page.waitForFunction(
+      () => document.querySelector('input[placeholder="Your Street *"]')?.value?.length > 0,
+      null,
+      { timeout: 15000 }
+    );
     await this.helper.fill(this.phoneInput, user.phone, 'phone');
     await this.helper.fill(this.emailInput, user.email, 'email');
     await this.helper.fill(this.passwordInput, user.password, 'password');
+    await this.passwordInput.press('Tab');
     await this.helper.click(this.registerButton, 'register submit');
   }
 }

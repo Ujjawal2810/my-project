@@ -8,7 +8,7 @@
     "houseNumber": "42",
     "phone": "5550102001",
     "emailPrefix": "morgan.reed.qa",
-    "emailDomain": "toolshop-test.example",
+    "emailDomain": "example.com",
     "password": "ShopTest1!"
   },
   "search": {

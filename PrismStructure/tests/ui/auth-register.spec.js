@@ -13,7 +13,8 @@ test.describe('Auth registration and login', () => {
     await registerPage.register(user);
 
     await expect(page, 'User should be redirected to login after successful registration').toHaveURL(
-      /\/auth\/login$/
+      /\/auth\/login$/,
+      { timeout: 15000 }
     );
 
     await loginPage.login(user.email, user.password);

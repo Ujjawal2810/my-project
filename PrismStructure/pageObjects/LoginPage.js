@@ -4,12 +4,12 @@ class LoginPage {
   constructor(page) {
     this.page = page;
     this.helper = new PlaywrightHelper(page);
-    this.emailInput = page.getByTestId('email');
-    this.passwordInput = page.getByTestId('password');
-    this.loginButton = page.getByTestId('login-submit');
-    this.errorMessage = page.getByTestId('login-error');
-    this.navMenu = page.getByTestId('nav-menu');
-    this.navSignIn = page.getByTestId('nav-sign-in');
+    this.emailInput = page.getByRole('textbox', { name: 'Email address *' });
+    this.passwordInput = page.getByRole('textbox', { name: 'Password *' });
+    this.loginButton = page.getByRole('button', { name: 'Login', exact: true });
+    this.errorMessage = page.locator('.alert.alert-danger, .invalid-feedback.d-block, [role="alert"]').first();
+    this.navMenu = page.getByRole('menubar', { name: 'Main menu' });
+    this.navSignIn = page.getByRole('link', { name: 'Sign in' });
   }
 
   async goto() {
@@ -30,11 +30,6 @@ class LoginPage {
     await this.goto();
     await this.fillCredentials(email, password);
     await this.submitLogin();
-  }
-
-  async getErrorMessageText() {
-    await this.errorMessage.waitFor({ state: 'visible' });
-    return this.errorMessage.innerText();
   }
 }
 

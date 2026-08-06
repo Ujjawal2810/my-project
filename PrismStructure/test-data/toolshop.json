@@ -39,7 +39,9 @@
     "invalidPassword": "WrongPass99!"
   },
   "messages": {
-    "invalidLoginCredentials": "Invalid email or password"
+    "invalidLoginCredentials": "Invalid email or password",
+    "noProductsFound": "There are no products found.",
+    "emptyCartMessage": "The cart is empty. Nothing to display."
   },
   "cart": {
     "defaultQuantity": 1,

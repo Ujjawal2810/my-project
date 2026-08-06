@@ -8,6 +8,8 @@ class HomePage {
     this.searchButton = page.getByRole('button', { name: 'Search', exact: true });
     this.productLinks = page.locator('a[href*="/product/"]');
     this.cartLink = page.getByRole('link', { name: /cart/i });
+    this.noResultsMessage = page.getByText('There are no products found.');
+    this.noResultsSummary = page.getByText(/0 products found for/i);
   }
 
   async goto() {
@@ -15,12 +17,24 @@ class HomePage {
     await this.searchInput.waitFor({ state: 'visible' });
   }
 
-  async search(keyword) {
+  async searchForKeyword(keyword) {
     await this.searchInput.click();
     await this.searchInput.fill(keyword);
     await this.helper.click(this.searchButton, 'search submit');
     await this.page.waitForLoadState('networkidle');
+  }
+
+  async search(keyword) {
+    await this.searchForKeyword(keyword);
     await this.productLinks.first().waitFor({ state: 'visible', timeout: 15000 });
+  }
+
+  async waitForNoSearchResults() {
+    await this.helper.waitForVisible(this.noResultsMessage);
+  }
+
+  async getVisibleProductLinkCount() {
+    return this.productLinks.count();
   }
 
   async searchAndOpenFirstInStock(keywords, excludePath = '') {

@@ -21,7 +21,7 @@ class CartPage {
     this.cartTotalValue = page.locator('tr', { has: page.locator('strong', { hasText: 'Total' }) }).locator('td').nth(3);
 
     this.proceedToCheckoutButton = page.getByRole('button', { name: 'Proceed to checkout' });
-
+    this.emptyCartMessage = page.getByText('The cart is empty. Nothing to display.');
   }
 
 
@@ -128,6 +128,20 @@ class CartPage {
 
     await this.helper.click(this.proceedToCheckoutButton, 'proceed to checkout');
 
+  }
+
+  async removeLineItem(lineIndex = 0) {
+    const removeLink = this.lineItems.nth(lineIndex).locator('a.btn-danger');
+    await this.helper.click(removeLink, `remove line ${lineIndex}`);
+    await this.page.waitForLoadState('networkidle');
+  }
+
+  async isProceedToCheckoutDisabled() {
+    return this.proceedToCheckoutButton.isDisabled();
+  }
+
+  async isCheckoutUnavailable() {
+    return this.proceedToCheckoutButton.isHidden();
   }
 
 }

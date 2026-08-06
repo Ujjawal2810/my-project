@@ -19,7 +19,7 @@ class CartApi {
   }
 
   async addItem(cartId, productId, quantity, token) {
-    return this.api.post(`/carts/${cartId}/items`, {
+    return this.api.post(`/carts/${cartId}`, {
       headers: this.api.authHeaders(token),
       data: { product_id: productId, quantity },
     });

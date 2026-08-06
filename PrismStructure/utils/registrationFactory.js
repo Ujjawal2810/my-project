@@ -21,4 +21,26 @@ function buildUniqueRegistrationUser() {
   };
 }
 
-module.exports = { buildUniqueRegistrationUser };
+/**
+ * API registration payload (snake_case) plus credentials for login.
+ */
+function buildApiRegistrationPayload() {
+  const user = buildUniqueRegistrationUser();
+
+  return {
+    credentials: {
+      email: user.email,
+      password: user.password,
+    },
+    payload: {
+      first_name: user.firstName,
+      last_name: user.lastName,
+      email: user.email,
+      password: user.password,
+      dob: user.dob,
+      phone: user.phone,
+    },
+  };
+}
+
+module.exports = { buildUniqueRegistrationUser, buildApiRegistrationPayload };

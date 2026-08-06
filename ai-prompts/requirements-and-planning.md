@@ -166,7 +166,7 @@ Cross-checked against `QA Practical Assessment.pdf` pages 1–15. Numbering gaps
 ## 6. Required Folder / File Tree
 
 ```
-qa-ai-practical-assessment/          # (repo root — name illustrative; your repo: my-project)
+QA-AI-Practical-Assessment/          # (repo root)
 ├── FunctionalTestCase.csv           # manual test suite
 ├── PrismStructure/                  # Playwright API + UI + execution reports
 │   └── (framework code, specs, reports)

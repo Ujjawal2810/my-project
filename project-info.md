@@ -4,7 +4,7 @@
 |-------|--------|
 | **Primary AI tool** | Cursor (Agent / Composer) |
 | **Application under test** | Practice Software Testing — Toolshop (UI v2.3) |
-| **Repository** | https://github.com/Ujjawal2810/my-project |
+| **Repository** | https://github.com/Ujjawal2810/QA-AI-Practical-Assessment |
 | **Assessment start date** | August 2026 |
 | **Submission date** | 6 August 2026 |
 

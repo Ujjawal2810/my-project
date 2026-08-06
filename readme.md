@@ -20,8 +20,8 @@ All npm commands below are run from **`PrismStructure/`** (where `package.json` 
 ## Installation
 
 ```bash
-git clone https://github.com/Ujjawal2810/my-project.git
-cd my-project/PrismStructure
+git clone https://github.com/Ujjawal2810/QA-AI-Practical-Assessment.git
+cd QA-AI-Practical-Assessment/PrismStructure
 npm install
 npx playwright install chromium
 ```
@@ -121,7 +121,7 @@ npm run report
 ## Repository structure
 
 ```
-my-project/
+QA-AI-Practical-Assessment/
 ├── readme.md                    # This file
 ├── project-info.md              # Assessment submission: scope, AI workflow, tools
 ├── FunctionalTestCase.csv       # Manual test cases (TC-M01–TC-M08)

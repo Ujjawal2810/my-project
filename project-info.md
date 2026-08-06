@@ -147,7 +147,8 @@ I did not copy AI-generated tests or locators without running them against the l
 **Shared with AI (intentionally, for this public practice app)**
 
 - Public Toolshop demo account *names* (e.g. `customer@practicesoftwaretesting.com`) — these are documented by the application vendor.
-- Structural test data in `toolshop.json` (registration password **pattern** `ShopTest1!` for validation rules; invalid password `WrongPass99!` for negative tests).
+- Structural test data in `toolshop.json` (UI messages, billing fields, search keywords — no passwords).
+- Registration and invalid-login passwords are loaded from `.env` (`REGISTRATION_PASSWORD`, `INVALID_TEST_PASSWORD`).
 
 **Repository policy**
 

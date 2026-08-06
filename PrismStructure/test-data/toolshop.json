@@ -8,8 +8,7 @@
     "houseNumber": "42",
     "phone": "5550102001",
     "emailPrefix": "morgan.reed.qa",
-    "emailDomain": "example.com",
-    "password": "ShopTest1!"
+    "emailDomain": "example.com"
   },
   "search": {
     "validKeyword": "pliers",
@@ -35,9 +34,7 @@
     "expectedLastName": "Doe",
     "expectedEmail": "customer@practicesoftwaretesting.com"
   },
-  "negative": {
-    "invalidPassword": "WrongPass99!"
-  },
+  "negative": {},
   "messages": {
     "invalidLoginCredentials": "Invalid email or password",
     "noProductsFound": "There are no products found.",

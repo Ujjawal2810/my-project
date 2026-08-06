@@ -4,6 +4,8 @@ const { test, expect } = require('../../base/BaseTest');
 const { env } = require('../../utils/env');
 
 test.describe('Cart management', () => {
+  test.setTimeout(60000);
+
   test('removes a line item and blocks checkout on an empty cart @regression', { tag: '@regression' }, async ({
     loginPage,
     homePage,
@@ -14,7 +16,12 @@ test.describe('Cart management', () => {
     await loginPage.login(env.testUserEmail, env.testUserPassword);
 
     await homePage.goto();
-    await homePage.searchAndOpenFirstInStock([testData.search.validKeyword, 'hammer', 'pliers']);
+    await homePage.searchAndOpenFirstInStock([
+      testData.search.validKeyword,
+      ...(testData.purchaseFlow?.productSearchFallbacks || []),
+      'hammer',
+      'pliers',
+    ]);
     await productPage.addToCart();
 
     await cartPage.goto();

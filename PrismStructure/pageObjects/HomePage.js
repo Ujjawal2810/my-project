@@ -69,6 +69,15 @@ class HomePage {
       }
 
       await this.helper.click(link, `in-stock product ${index}`);
+
+      const addToCartButton = this.page.locator('[data-test="add-to-cart"]');
+      await addToCartButton.waitFor({ state: 'visible', timeout: 10000 });
+      if (!(await addToCartButton.isEnabled())) {
+        await this.page.goBack();
+        await this.productLinks.first().waitFor({ state: 'visible', timeout: 15000 });
+        continue;
+      }
+
       return;
     }
 

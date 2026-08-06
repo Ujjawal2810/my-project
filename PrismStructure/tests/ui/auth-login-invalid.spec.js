@@ -9,7 +9,10 @@ test.describe('Auth login validation', () => {
     testData,
   }) => {
     const email = env.testUserEmail;
-    const wrongPassword = testData.negative.invalidPassword;
+    const wrongPassword = env.invalidTestPassword;
+    if (!wrongPassword) {
+      throw new Error('INVALID_TEST_PASSWORD is missing in .env');
+    }
     const expectedError = testData.messages.invalidLoginCredentials;
 
     await loginPage.goto();

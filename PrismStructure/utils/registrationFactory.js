@@ -1,5 +1,13 @@
 const { randomUUID } = require('crypto');
 const { getSection } = require('./DataProvider');
+const { env } = require('./env');
+
+function requireRegistrationPassword() {
+  if (!env.registrationPassword) {
+    throw new Error('REGISTRATION_PASSWORD is missing in .env (must meet Toolshop registration rules)');
+  }
+  return env.registrationPassword;
+}
 
 /**
  * Builds a registration user with a unique email from test-data/toolshop.json.
@@ -16,7 +24,7 @@ function buildUniqueRegistrationUser() {
     postalCode: registration.postalCode,
     houseNumber: registration.houseNumber,
     phone: registration.phone,
-    password: registration.password,
+    password: requireRegistrationPassword(),
     email: `${registration.emailPrefix}.${uniqueSuffix}@${registration.emailDomain}`,
   };
 }

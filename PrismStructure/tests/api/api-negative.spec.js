@@ -39,9 +39,11 @@ test.describe('API negative scenarios', () => {
     { tag: '@regression' },
     async ({ request }) => {
       const authApi = new AuthApi(request);
-      const negativeData = getSection('negative');
+      if (!env.invalidTestPassword) {
+        throw new Error('INVALID_TEST_PASSWORD is missing in .env');
+      }
 
-      const response = await authApi.login(env.testUserEmail, negativeData.invalidPassword);
+      const response = await authApi.login(env.testUserEmail, env.invalidTestPassword);
 
       expect(response.status(), 'Invalid credentials should be rejected with 401').toBe(401);
       const body = await response.json();

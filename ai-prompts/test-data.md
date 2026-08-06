@@ -12,9 +12,8 @@ Proposed `test-data/toolshop.json` for static UI strings and checkout defaults, 
 Confirmed specs read data through `DataProvider`, `env.js`, and factories — no raw passwords in `tests/**/*.spec.js`. Ran API lifecycle and purchase journey against live SUT.
 
 **What I changed and why:**
-- Kept **registration password pattern** in `toolshop.json` (`ShopTest1!`) because it is a public validation rule, not a user secret.
-- Moved **runtime demo passwords** to local `.env` only; redacted `PrismStructure/.env.example` to `<your-demo-password>` placeholders.
-- Updated manual CSV `TestData` column to reference `.env` keys instead of literal passwords.
+- Kept registration and invalid-login passwords in local `.env` only (`REGISTRATION_PASSWORD`, `INVALID_TEST_PASSWORD`).
+- Removed password literals from `toolshop.json` and manual CSV `TestData` column.
 
 ---
 
@@ -46,7 +45,7 @@ Stored billing defaults in `toolshop.json` under `invoice` and `checkout` sectio
 Live API returned 401 for wrong password; UI showed exact alert `Invalid email or password`; search `zzxnonexistent999` returned `There are no products found.`
 
 **What I changed and why:**
-Used `WrongPass99!` as **invalid** password only (not a real account secret). Kept keyword `zzxnonexistent999` stable so empty-state test is deterministic.
+Used `INVALID_TEST_PASSWORD` from `.env` for negative login tests. Kept keyword `zzxnonexistent999` stable so empty-state test is deterministic.
 
 ---
 

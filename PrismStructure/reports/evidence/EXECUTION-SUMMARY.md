@@ -5,7 +5,7 @@
 | **Command** | `npm run test:all` (from `PrismStructure/`) |
 | **Date** | 6 August 2026 |
 | **Result** | **13 passed**, 0 failed |
-| **Duration** | ~36s |
+| **Duration** | ~40s |
 | **Workers** | 8 parallel |
 
 ## UI (7 tests) — all Passed

@@ -30,6 +30,15 @@ class ProductPage {
 
   async addToCart() {
     await this.waitForLoaded();
+    await this.addToCartButton.waitFor({ state: 'visible' });
+    await this.page.waitForFunction(
+      () => {
+        const button = document.querySelector('[data-test="add-to-cart"]');
+        return button && !button.disabled;
+      },
+      null,
+      { timeout: 20000 }
+    );
     await this.helper.click(this.addToCartButton, 'add to cart');
     await this.helper.waitForVisible(this.addedToCartAlert);
   }

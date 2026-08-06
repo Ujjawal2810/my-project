@@ -3,7 +3,8 @@
     "argv": [
       "C:\\Program Files\\nodejs\\node.exe",
       "C:\\Users\\Ujjawal Panwar\\my-project\\PrismStructure\\node_modules\\@playwright\\test\\cli.js",
-      "test"
+      "test",
+      "--project=ui-chromium"
     ],
     "configFile": "C:\\Users\\Ujjawal Panwar\\my-project\\PrismStructure\\playwright.config.js",
     "rootDir": "C:/Users/Ujjawal Panwar/my-project/PrismStructure/tests",
@@ -17,7 +18,7 @@
     "grepInvert": null,
     "maxFailures": 0,
     "metadata": {
-      "actualWorkers": 8
+      "actualWorkers": 7
     },
     "preserveOutput": "always",
     "projects": [
@@ -26,7 +27,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 8
+          "actualWorkers": 7
         },
         "id": "ui-chromium",
         "name": "ui-chromium",
@@ -42,7 +43,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 8
+          "actualWorkers": 7
         },
         "id": "api-tests",
         "name": "api-tests",
@@ -119,7 +120,7 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 7539,
+                      "duration": 8249,
                       "errors": [],
                       "stdout": [
                         {
@@ -134,7 +135,7 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-08-06T16:00:32.596Z",
+                      "startTime": "2026-08-06T16:27:23.535Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -183,7 +184,7 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 12142,
+                      "duration": 14474,
                       "errors": [],
                       "stdout": [
                         {
@@ -225,7 +226,7 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-08-06T16:00:32.647Z",
+                      "startTime": "2026-08-06T16:27:23.361Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -264,7 +265,7 @@
               ],
               "tests": [
                 {
-                  "timeout": 30000,
+                  "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "ui-chromium",
@@ -274,7 +275,7 @@
                       "workerIndex": 2,
                       "parallelIndex": 2,
                       "status": "passed",
-                      "duration": 17536,
+                      "duration": 21214,
                       "errors": [],
                       "stdout": [
                         {
@@ -293,6 +294,9 @@
                           "text": "[PlaywrightHelper] Click: in-stock product 0\n"
                         },
                         {
+                          "text": "[PlaywrightHelper] Click: in-stock product 1\n"
+                        },
+                        {
                           "text": "[PlaywrightHelper] Click: add to cart\n"
                         },
                         {
@@ -304,7 +308,7 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-08-06T16:00:32.835Z",
+                      "startTime": "2026-08-06T16:27:23.701Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -314,7 +318,7 @@
               ],
               "id": "7fcb215b9cfd9585f59f-a9b720cf5e807e2dc306",
               "file": "ui/cart-remove-item.spec.js",
-              "line": 7,
+              "line": 9,
               "column": 3
             }
           ]
@@ -353,12 +357,12 @@
                       "workerIndex": 3,
                       "parallelIndex": 3,
                       "status": "passed",
-                      "duration": 24902,
+                      "duration": 7647,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-08-06T16:00:33.041Z",
+                      "startTime": "2026-08-06T16:27:23.661Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -390,7 +394,7 @@
                       "workerIndex": 4,
                       "parallelIndex": 4,
                       "status": "passed",
-                      "duration": 6505,
+                      "duration": 27718,
                       "errors": [],
                       "stdout": [
                         {
@@ -399,7 +403,7 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-08-06T16:00:32.622Z",
+                      "startTime": "2026-08-06T16:27:23.576Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -409,7 +413,7 @@
               ],
               "id": "379953442ddfc3019abd-7423635799db0f065499",
               "file": "ui/home.spec.js",
-              "line": 10,
+              "line": 14,
               "column": 3
             }
           ]
@@ -450,7 +454,7 @@
                       "workerIndex": 5,
                       "parallelIndex": 5,
                       "status": "passed",
-                      "duration": 32804,
+                      "duration": 35792,
                       "errors": [],
                       "stdout": [
                         {
@@ -513,7 +517,7 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-08-06T16:00:33.004Z",
+                      "startTime": "2026-08-06T16:27:23.914Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -562,7 +566,7 @@
                       "workerIndex": 6,
                       "parallelIndex": 6,
                       "status": "passed",
-                      "duration": 7424,
+                      "duration": 7559,
                       "errors": [],
                       "stdout": [
                         {
@@ -571,7 +575,7 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-08-06T16:00:33.002Z",
+                      "startTime": "2026-08-06T16:27:23.883Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -587,349 +591,13 @@
           ]
         }
       ]
-    },
-    {
-      "title": "api\\api-negative.spec.js",
-      "file": "api/api-negative.spec.js",
-      "column": 0,
-      "line": 0,
-      "specs": [],
-      "suites": [
-        {
-          "title": "API negative scenarios",
-          "file": "api/api-negative.spec.js",
-          "line": 36,
-          "column": 6,
-          "specs": [
-            {
-              "title": "rejects login with a valid email and wrong password @regression",
-              "ok": true,
-              "tags": [
-                "regression",
-                "regression"
-              ],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "api-tests",
-                  "projectName": "api-tests",
-                  "results": [
-                    {
-                      "workerIndex": 7,
-                      "parallelIndex": 7,
-                      "status": "passed",
-                      "duration": 1548,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "[ApiHelper] POST /users/login\n"
-                        }
-                      ],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-08-06T16:00:32.769Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "b346edd69c8e44ae1e85-72341896ddb45acf89d0",
-              "file": "api/api-negative.spec.js",
-              "line": 37,
-              "column": 3
-            },
-            {
-              "title": "rejects invoice requests with a malformed bearer token @regression",
-              "ok": true,
-              "tags": [
-                "regression",
-                "regression"
-              ],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "api-tests",
-                  "projectName": "api-tests",
-                  "results": [
-                    {
-                      "workerIndex": 7,
-                      "parallelIndex": 7,
-                      "status": "passed",
-                      "duration": 527,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "[ApiHelper] GET /invoices\n"
-                        }
-                      ],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-08-06T16:00:34.502Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "b346edd69c8e44ae1e85-c94c04a892adfde43539",
-              "file": "api/api-negative.spec.js",
-              "line": 53,
-              "column": 3
-            },
-            {
-              "title": "rejects invoice creation when a required billing field is missing @regression",
-              "ok": true,
-              "tags": [
-                "regression",
-                "regression"
-              ],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "api-tests",
-                  "projectName": "api-tests",
-                  "results": [
-                    {
-                      "workerIndex": 7,
-                      "parallelIndex": 7,
-                      "status": "passed",
-                      "duration": 2616,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "[ApiHelper] POST /users/register\n"
-                        },
-                        {
-                          "text": "[ApiHelper] POST /users/login\n"
-                        },
-                        {
-                          "text": "[ApiHelper] POST /carts\n"
-                        },
-                        {
-                          "text": "[ApiHelper] POST /invoices\n"
-                        }
-                      ],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-08-06T16:00:35.046Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "b346edd69c8e44ae1e85-66699dbb4c9ac2c38531",
-              "file": "api/api-negative.spec.js",
-              "line": 69,
-              "column": 3
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "title": "api\\auth.spec.js",
-      "file": "api/auth.spec.js",
-      "column": 0,
-      "line": 0,
-      "specs": [],
-      "suites": [
-        {
-          "title": "Auth API",
-          "file": "api/auth.spec.js",
-          "line": 6,
-          "column": 6,
-          "specs": [
-            {
-              "title": "login returns access token @smoke",
-              "ok": true,
-              "tags": [
-                "smoke",
-                "smoke"
-              ],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "api-tests",
-                  "projectName": "api-tests",
-                  "results": [
-                    {
-                      "workerIndex": 7,
-                      "parallelIndex": 7,
-                      "status": "passed",
-                      "duration": 795,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "[ApiHelper] POST /users/login\n"
-                        }
-                      ],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-08-06T16:00:37.710Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "d5ed79a6b333c2ba7209-e036393910357283d15b",
-              "file": "api/auth.spec.js",
-              "line": 7,
-              "column": 3
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "title": "api\\order-lifecycle.spec.js",
-      "file": "api/order-lifecycle.spec.js",
-      "column": 0,
-      "line": 0,
-      "specs": [],
-      "suites": [
-        {
-          "title": "Order lifecycle API",
-          "file": "api/order-lifecycle.spec.js",
-          "line": 120,
-          "column": 6,
-          "specs": [
-            {
-              "title": "registers, logs in, lists products, and creates cart @smoke",
-              "ok": true,
-              "tags": [
-                "smoke",
-                "smoke"
-              ],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "api-tests",
-                  "projectName": "api-tests",
-                  "results": [
-                    {
-                      "workerIndex": 7,
-                      "parallelIndex": 7,
-                      "status": "passed",
-                      "duration": 2628,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "[ApiHelper] POST /users/register\n"
-                        },
-                        {
-                          "text": "[ApiHelper] POST /users/login\n"
-                        },
-                        {
-                          "text": "[ApiHelper] GET /products\n"
-                        },
-                        {
-                          "text": "[ApiHelper] POST /carts\n"
-                        }
-                      ],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-08-06T16:00:38.540Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "d62a98c4a0f7119433d8-96cdf29f0cb6167d2d61",
-              "file": "api/order-lifecycle.spec.js",
-              "line": 121,
-              "column": 3
-            },
-            {
-              "title": "completes full order lifecycle through invoice @regression",
-              "ok": true,
-              "tags": [
-                "regression",
-                "regression"
-              ],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "api-tests",
-                  "projectName": "api-tests",
-                  "results": [
-                    {
-                      "workerIndex": 8,
-                      "parallelIndex": 4,
-                      "status": "passed",
-                      "duration": 4945,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "[ApiHelper] POST /users/register\n"
-                        },
-                        {
-                          "text": "[ApiHelper] POST /users/login\n"
-                        },
-                        {
-                          "text": "[ApiHelper] GET /products\n"
-                        },
-                        {
-                          "text": "[ApiHelper] POST /carts\n"
-                        },
-                        {
-                          "text": "[ApiHelper] POST /carts/01kzbwwejrfrh7dp7r80227qjm\n"
-                        },
-                        {
-                          "text": "[ApiHelper] GET /carts/01kzbwwejrfrh7dp7r80227qjm\n"
-                        },
-                        {
-                          "text": "[ApiHelper] POST /invoices\n"
-                        },
-                        {
-                          "text": "[ApiHelper] GET /invoices\n"
-                        }
-                      ],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-08-06T16:00:41.911Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "d62a98c4a0f7119433d8-405e4adc4c65ba7f3ae6",
-              "file": "api/order-lifecycle.spec.js",
-              "line": 136,
-              "column": 3
-            }
-          ]
-        }
-      ]
     }
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-08-06T16:00:30.383Z",
-    "duration": 36431.159999999996,
-    "expected": 13,
+    "startTime": "2026-08-06T16:27:21.654Z",
+    "duration": 39594.596,
+    "expected": 7,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0

@@ -13,6 +13,8 @@ const env = {
   testUser2Password: process.env.TEST_USER2_PASSWORD || '',
   testUser3Email: process.env.TEST_USER3_EMAIL || '',
   testUser3Password: process.env.TEST_USER3_PASSWORD || '',
+  registrationPassword: process.env.REGISTRATION_PASSWORD || '',
+  invalidTestPassword: process.env.INVALID_TEST_PASSWORD || '',
 };
 
 module.exports = { env };

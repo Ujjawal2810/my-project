@@ -60,6 +60,12 @@ TEST_USER2_PASSWORD=<your-demo2-password>
 # Purchase journey user (customer3 — required for purchase-journey.spec.js)
 TEST_USER3_EMAIL=<your-demo3-email@example.com>
 TEST_USER3_PASSWORD=<your-demo3-password>
+
+# Registration tests — must meet Toolshop password rules
+REGISTRATION_PASSWORD=<registration-password-meeting-toolshop-rules>
+
+# Negative login tests — must not match TEST_USER_EMAIL
+INVALID_TEST_PASSWORD=<wrong-password-for-negative-tests>
 ```
 
 Use the public Toolshop demo account credentials from the application documentation, or your own registered users. Never commit real passwords to the repository.

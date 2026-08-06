@@ -1,0 +1,437 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\Ujjawal Panwar\\my-project\\PrismStructure\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "--project=api-tests"
+    ],
+    "configFile": "C:\\Users\\Ujjawal Panwar\\my-project\\PrismStructure\\playwright.config.js",
+    "rootDir": "C:/Users/Ujjawal Panwar/my-project/PrismStructure/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 6
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "C:/Users/Ujjawal Panwar/my-project/PrismStructure/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 6
+        },
+        "id": "ui-chromium",
+        "name": "ui-chromium",
+        "testDir": "C:/Users/Ujjawal Panwar/my-project/PrismStructure/tests/ui",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "C:/Users/Ujjawal Panwar/my-project/PrismStructure/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 6
+        },
+        "id": "api-tests",
+        "name": "api-tests",
+        "testDir": "C:/Users/Ujjawal Panwar/my-project/PrismStructure/tests/api",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "html",
+        {
+          "outputFolder": "C:\\Users\\Ujjawal Panwar\\my-project\\PrismStructure\\reports\\html",
+          "open": "never"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "C:\\Users\\Ujjawal Panwar\\my-project\\PrismStructure\\reports\\results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.62.1",
+    "workers": 8,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "api\\api-negative.spec.js",
+      "file": "api/api-negative.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "API negative scenarios",
+          "file": "api/api-negative.spec.js",
+          "line": 35,
+          "column": 6,
+          "specs": [
+            {
+              "title": "rejects login with a valid email and wrong password @regression",
+              "ok": true,
+              "tags": [
+                "regression",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "api-tests",
+                  "projectName": "api-tests",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 673,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "[ApiHelper] POST /users/login\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-06T15:24:18.341Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "b346edd69c8e44ae1e85-72341896ddb45acf89d0",
+              "file": "api/api-negative.spec.js",
+              "line": 36,
+              "column": 3
+            },
+            {
+              "title": "rejects invoice requests with a malformed bearer token @regression",
+              "ok": true,
+              "tags": [
+                "regression",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "api-tests",
+                  "projectName": "api-tests",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 596,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "[ApiHelper] GET /invoices\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-06T15:24:18.251Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "b346edd69c8e44ae1e85-c94c04a892adfde43539",
+              "file": "api/api-negative.spec.js",
+              "line": 52,
+              "column": 3
+            },
+            {
+              "title": "rejects invoice creation when a required billing field is missing @regression",
+              "ok": true,
+              "tags": [
+                "regression",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "api-tests",
+                  "projectName": "api-tests",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 2545,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "[ApiHelper] POST /users/register\n"
+                        },
+                        {
+                          "text": "[ApiHelper] POST /users/login\n"
+                        },
+                        {
+                          "text": "[ApiHelper] POST /carts\n"
+                        },
+                        {
+                          "text": "[ApiHelper] POST /invoices\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-06T15:24:18.448Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "b346edd69c8e44ae1e85-66699dbb4c9ac2c38531",
+              "file": "api/api-negative.spec.js",
+              "line": 68,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "api\\auth.spec.js",
+      "file": "api/auth.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Auth API",
+          "file": "api/auth.spec.js",
+          "line": 5,
+          "column": 6,
+          "specs": [
+            {
+              "title": "login returns access token @smoke",
+              "ok": true,
+              "tags": [
+                "smoke",
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "api-tests",
+                  "projectName": "api-tests",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 790,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "[ApiHelper] POST /users/login\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-06T15:24:18.374Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d5ed79a6b333c2ba7209-e036393910357283d15b",
+              "file": "api/auth.spec.js",
+              "line": 6,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "api\\order-lifecycle.spec.js",
+      "file": "api/order-lifecycle.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Order lifecycle API",
+          "file": "api/order-lifecycle.spec.js",
+          "line": 119,
+          "column": 6,
+          "specs": [
+            {
+              "title": "registers, logs in, lists products, and creates cart @smoke",
+              "ok": true,
+              "tags": [
+                "smoke",
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "api-tests",
+                  "projectName": "api-tests",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 4,
+                      "status": "passed",
+                      "duration": 2610,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "[ApiHelper] POST /users/register\n"
+                        },
+                        {
+                          "text": "[ApiHelper] POST /users/login\n"
+                        },
+                        {
+                          "text": "[ApiHelper] GET /products\n"
+                        },
+                        {
+                          "text": "[ApiHelper] POST /carts\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-06T15:24:18.482Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d62a98c4a0f7119433d8-96cdf29f0cb6167d2d61",
+              "file": "api/order-lifecycle.spec.js",
+              "line": 120,
+              "column": 3
+            },
+            {
+              "title": "completes full order lifecycle through invoice @regression",
+              "ok": true,
+              "tags": [
+                "regression",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "api-tests",
+                  "projectName": "api-tests",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 5,
+                      "status": "passed",
+                      "duration": 4812,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "[ApiHelper] POST /users/register\n"
+                        },
+                        {
+                          "text": "[ApiHelper] POST /users/login\n"
+                        },
+                        {
+                          "text": "[ApiHelper] GET /products\n"
+                        },
+                        {
+                          "text": "[ApiHelper] POST /carts\n"
+                        },
+                        {
+                          "text": "[ApiHelper] POST /carts/01kzbtstc9ext5g3acf0k7j1j7\n"
+                        },
+                        {
+                          "text": "[ApiHelper] GET /carts/01kzbtstc9ext5g3acf0k7j1j7\n"
+                        },
+                        {
+                          "text": "[ApiHelper] POST /invoices\n"
+                        },
+                        {
+                          "text": "[ApiHelper] GET /invoices\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-06T15:24:18.588Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d62a98c4a0f7119433d8-405e4adc4c65ba7f3ae6",
+              "file": "api/order-lifecycle.spec.js",
+              "line": 135,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-08-06T15:24:17.152Z",
+    "duration": 6375.521,
+    "expected": 6,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

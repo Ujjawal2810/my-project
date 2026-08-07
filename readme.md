@@ -103,7 +103,7 @@ After any Playwright run, reports are written under `PrismStructure/`:
 |--------|------|------------------|
 | **HTML report** | `PrismStructure/reports/html/` | `playwright.config.js` → `reporter` `html` |
 | **JSON results** | `PrismStructure/reports/results.json` | `playwright.config.js` → `reporter` `json` |
-| **Committed evidence** | `PrismStructure/reports/evidence/` | Summary, log, JSON copy, HTML + PNG after green `test:all` |
+| **Committed evidence** | `PrismStructure/reports/evidence/` | Summary, log, JSON, HTML, PNG, **UI run video** (`automation-ui-run.webm`) |
 | **Failure screenshots** | `PrismStructure/test-results/` | `screenshot: 'only-on-failure'` |
 | **Traces (on retry)** | `PrismStructure/test-results/` | `trace: 'on-first-retry'` |
 
@@ -149,6 +149,7 @@ QA-AI-Practical-Assessment/
     │   ├── ui/                  # 7 UI specs (*.spec.js)
     │   └── api/                 # 6 API specs (*.spec.js)
     └── reports/                 # Generated at runtime (html/, results.json)
+        └── evidence/            # Committed pass evidence + automation-ui-run.webm
 ```
 
 ---

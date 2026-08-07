@@ -37,11 +37,13 @@
 - `results.json` — Playwright JSON reporter output (all `status: passed`)
 - `execution-report.html` — human-readable summary (open in browser)
 - `test-run-summary.png` — screenshot of the HTML summary
+- `automation-ui-run.webm` — headed UI run recording (all UI specs, sequential)
+- `videos/` — per-spec `.webm` clips from the latest recording
 
-Regenerate locally:
+Record locally:
 
 ```bash
 cd PrismStructure
-npm run test:all
-node scripts/capture-evidence-screenshot.js
+npm run test:ui:record
+npm run evidence:collect-videos
 ```

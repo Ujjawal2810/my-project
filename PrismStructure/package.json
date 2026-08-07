@@ -9,6 +9,8 @@
     "test:api": "playwright test --project=api-tests",
     "test:smoke": "playwright test --grep @smoke",
     "test:regression": "playwright test --grep @regression",
+    "test:ui:record": "node scripts/record-ui-tests.js",
+    "evidence:collect-videos": "node scripts/collect-ui-videos.js",
     "report": "playwright show-report reports/html"
   },
   "devDependencies": {

@@ -1,0 +1,7 @@
+file 'C:/Users/Ujjawal Panwar/my-project/PrismStructure/reports/evidence/videos/01-auth-login-invalid-Auth-lo-6ae5a-ct-error-message-regression-ui-chromium.webm'
+file 'C:/Users/Ujjawal Panwar/my-project/PrismStructure/reports/evidence/videos/02-auth-register-Auth-registr-c24f3-s-account-name-in-nav-smoke-ui-chromium.webm'
+file 'C:/Users/Ujjawal Panwar/my-project/PrismStructure/reports/evidence/videos/03-cart-remove-item-Cart-mana-b3306-on-an-empty-cart-regression-ui-chromium.webm'
+file 'C:/Users/Ujjawal Panwar/my-project/PrismStructure/reports/evidence/videos/04-home-Home-Page-loads-Toolshop-home-page-smoke-ui-chromium.webm'
+file 'C:/Users/Ujjawal Panwar/my-project/PrismStructure/reports/evidence/videos/05-home-Home-Page-search-retu-06171-or-valid-keyword-regression-ui-chromium.webm'
+file 'C:/Users/Ujjawal Panwar/my-project/PrismStructure/reports/evidence/videos/06-purchase-journey-Purchase--76a38-es-invoice-smoke-regression-ui-chromium.webm'
+file 'C:/Users/Ujjawal Panwar/my-project/PrismStructure/reports/evidence/videos/07-search-no-results-Product--4fdc3-ches-no-products-regression-ui-chromium.webm'

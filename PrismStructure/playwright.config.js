@@ -3,6 +3,8 @@ const path = require('path');
 require('dotenv').config({ path: path.join(__dirname, '.env') });
 const { defineConfig, devices } = require('@playwright/test');
 
+const recordVideo = process.env.RECORD_VIDEO === '1';
+
 module.exports = defineConfig({
   testDir: './tests',
   timeout: 30000,
@@ -29,6 +31,7 @@ module.exports = defineConfig({
       use: {
         ...devices['Desktop Chrome'],
         baseURL: process.env.BASE_URL || 'https://practicesoftwaretesting.com',
+        video: recordVideo ? 'on' : 'retain-on-failure',
       },
     },
     {
